@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'echo "artifact" > target/out'
+                sh 'mkdir -p target && echo "artifact" > target/out'
                 archiveArtifacts artifacts: 'target/out', fingerprint: true
             }
         }
